@@ -1,0 +1,21 @@
+{
+  "name": "02-bases",
+  "version": "0.0.1",
+  "description": "Primera aplicacion de Node.js",
+  "license": "MIT",
+  "author": "Alex R. Farnes",
+  "type": "module",
+  "main": "app.js",
+  "scripts": {
+    "start": "node src/app.js",
+    "dev": "nodemon src/app.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  },
+  "dependencies": {
+    "get-age": "^1.0.1",
+    "uuid": "^11.1.0"
+  }
+}

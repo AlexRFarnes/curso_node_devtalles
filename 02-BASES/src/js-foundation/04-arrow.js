@@ -1,0 +1,26 @@
+const users = [
+  {
+    id: 1,
+    name: "John Doe",
+  },
+  {
+    id: 2,
+    name: "Jane Doe",
+  },
+];
+
+const getUserById = (id, callback) => {
+  const user = users.find(user => user.id === id);
+  if (user) {
+    callback(null, user);
+  } else {
+    callback(`User with id ${id} not found`);
+  }
+};
+
+getUserById(3, (error, user) => {
+  if (error) {
+    throw new Error(error);
+  }
+  console.log(user);
+});
