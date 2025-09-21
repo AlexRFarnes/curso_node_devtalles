@@ -11,17 +11,15 @@ const users = [
 
 function getUserById(id, callback) {
   const user = users.find(user => user.id === id);
-  if (user) {
-    callback(null, user);
-  } else {
-    callback(new Error(`User with id ${id} not found`));
+  if (!user) {
+    return callback(new Error(`USER with id ${id} not found`));
   }
+  return callback(null, user);
 }
 
 getUserById(1, (error, user) => {
   if (error) {
-    console.error(error);
-  } else {
-    console.log(user);
+    throw new Error(error);
   }
+  console.log(user);
 });
