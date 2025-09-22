@@ -5,7 +5,7 @@
 // require("./js-foundation/03-callbacks.js");
 // const { getUserById } = require("./js-foundation/04-arrow.js");
 // const { buildMakePerson } = require("./js-foundation/05-factory.js");
-const { getPokemonById } = require("./js-foundation/06-promises.js");
+// const { getPokemonById } = require("./js-foundation/06-promises.js");
 
 // const obj = { name: "Alex", birthdate: "1990-03-04" };
 
@@ -15,7 +15,14 @@ const { getPokemonById } = require("./js-foundation/06-promises.js");
 
 // console.log(alex);
 
-getPokemonById(4)
-  .then(data => console.log({ data }))
-  .catch(err => console.error(err))
-  .finally(() => console.log("Finally"));
+// getPokemonById(4)
+//   .then(data => console.log({ data }))
+//   .catch(err => console.error(err))
+//   .finally(() => console.log("Finally"));
+
+const { buildLogger } = require("./plugins");
+
+const logger = buildLogger("app.js");
+
+logger.log("Hola mundo");
+logger.error("Esto es algo malo");
