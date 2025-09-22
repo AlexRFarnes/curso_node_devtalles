@@ -1,13 +1,11 @@
-// import { getAge, getUUID } from "./plugins/index.js";
+// const { getAge, getUUID } = require("./plugins");
 
-// import { emailTemplate } from "./js-foundation/01-template.js";
-// import "./js-foundation/02-destructuring.js";
-// import "./js-foundation/03-callbacks.js";
-// import "./js-foundation/04-arrow.js";
-// import { buildMakePerson } from "./js-foundation/05-factory.js";
-import { getPokemonById } from "./js-foundation/06-promises.js";
-
-getPokemonById(1);
+// const { emailTemplate } = require("./js-foundation/01-template.js");
+// require("./js-foundation/02-destructuring.js");
+// require("./js-foundation/03-callbacks.js");
+// const { getUserById } = require("./js-foundation/04-arrow.js");
+// const { buildMakePerson } = require("./js-foundation/05-factory.js");
+const { getPokemonById } = require("./js-foundation/06-promises.js");
 
 // const obj = { name: "Alex", birthdate: "1990-03-04" };
 
@@ -16,3 +14,8 @@ getPokemonById(1);
 // const alex = makePerson(obj);
 
 // console.log(alex);
+
+getPokemonById(4)
+  .then(data => console.log({ data }))
+  .catch(err => console.error(err))
+  .finally(() => console.log("Finally"));

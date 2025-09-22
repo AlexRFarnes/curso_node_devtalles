@@ -18,9 +18,11 @@ const getUserById = (id, callback) => {
   }
 };
 
-getUserById(3, (error, user) => {
+getUserById(1, (error, user) => {
   if (error) {
     throw new Error(error);
   }
   console.log(user);
 });
+
+module.exports = { getUserById };
