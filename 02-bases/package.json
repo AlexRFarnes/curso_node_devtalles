@@ -1,22 +1,28 @@
 {
-  "name": "02-bases",
-  "version": "0.0.1",
-  "description": "Primera aplicacion de Node.js",
-  "license": "MIT",
-  "author": "Alex R. Farnes",
-  "main": "app.js",
+  "name": "03-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js",
-    "dev:debug": "echo 'Hola mundo desde dev debug'"
+    "dev": "nodemon",
+    "build": "rimraf ./dist && tsc",
+    "start": "npm run build && node dist/app.js"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
-    "nodemon": "^3.1.10"
+    "@types/node": "^24.5.2",
+    "@types/uuid": "^10.0.0",
+    "nodemon": "^3.1.10",
+    "rimraf": "^6.0.1",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
   },
   "dependencies": {
     "axios": "^1.12.2",
     "get-age": "^1.0.1",
-    "uuid": "^11.1.0",
+    "uuid": "^13.0.0",
     "winston": "^3.17.0"
   }
 }
