@@ -1,31 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1758691291545" clover="3.2.0">
-  <project timestamp="1758691291545" name="All files">
-    <metrics statements="19" coveredstatements="19" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="19" coveredelements="19" complexity="0" loc="19" ncloc="19" packages="1" files="2" classes="2"/>
-    <file name="01-template.ts" path="/home/alexrf/code/node_devtalles/02-bases/src/js-foundation/01-template.ts">
-      <metrics statements="8" coveredstatements="8" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="2" count="1" type="stmt"/>
-      <line num="3" count="1" type="stmt"/>
-      <line num="4" count="1" type="stmt"/>
-      <line num="5" count="1" type="stmt"/>
-      <line num="6" count="1" type="stmt"/>
-      <line num="7" count="1" type="stmt"/>
-      <line num="8" count="1" type="stmt"/>
-    </file>
-    <file name="02-destructuring.ts" path="/home/alexrf/code/node_devtalles/02-bases/src/js-foundation/02-destructuring.ts">
-      <metrics statements="11" coveredstatements="11" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
-      <line num="1" count="1" type="stmt"/>
-      <line num="2" count="1" type="stmt"/>
-      <line num="3" count="1" type="stmt"/>
-      <line num="4" count="1" type="stmt"/>
-      <line num="5" count="1" type="stmt"/>
-      <line num="6" count="1" type="stmt"/>
-      <line num="7" count="1" type="stmt"/>
-      <line num="8" count="1" type="stmt"/>
-      <line num="9" count="1" type="stmt"/>
-      <line num="10" count="1" type="stmt"/>
-      <line num="11" count="1" type="stmt"/>
-    </file>
+<coverage generated="1758692470747" clover="3.2.0">
+  <project timestamp="1758692470747" name="All files">
+    <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0" elements="0" coveredelements="0" complexity="0" loc="0" ncloc="0" packages="0" files="0" classes="0"/>
   </project>
 </coverage>
