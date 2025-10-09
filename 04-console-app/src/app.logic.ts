@@ -1,6 +1,6 @@
-import fs from "fs";
+import fs from 'fs';
 
-let output: string = "";
+let output: string = '';
 let base: number = 5;
 output += `===================================
         Tabla del ${base}
@@ -13,7 +13,7 @@ for (let i = 1; i <= 10; i++) {
 
 console.log(output);
 
-const outDir = "outputs";
+const outDir = 'outputs';
 
 fs.mkdirSync(outDir, { recursive: true });
-fs.writeFileSync(`${outDir}/tabla-${base}.txt`, output, "utf-8");
+fs.writeFileSync(`${outDir}/tabla-${base}.txt`, output, 'utf-8');

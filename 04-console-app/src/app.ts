@@ -1,4 +1,4 @@
-import { yargsPlugin } from "./config/plugins/yargs.plugin.js";
+import { yargsPlugin } from './config/plugins/yargs.plugin.js';
 
 (async () => {
   await main();
