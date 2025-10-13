@@ -1,19 +1,18 @@
 import fs from 'fs';
+import { yargsPlugin as args } from './config/plugins/yargs.plugin.js';
+
+const { b: base, l: limit, s: displayTable } = args;
 
 let output: string = '';
-let base: number = 5;
 output += `===================================
         Tabla del ${base}
 ===================================\n
 `;
 
-for (let i = 1; i <= 10; i++) {
+for (let i = 1; i <= limit; i++) {
   output += `${base} x  ${i} =  ${base * i}\n`;
 }
 
-console.log(output);
-
-const outDir = 'outputs';
-
-fs.mkdirSync(outDir, { recursive: true });
-fs.writeFileSync(`${outDir}/tabla-${base}.txt`, output, 'utf-8');
+if (displayTable) {
+  console.log(output);
+}

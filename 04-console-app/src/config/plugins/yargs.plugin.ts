@@ -20,4 +20,11 @@ export const yargsPlugin = yargs(hideBin(process.argv))
     default: false,
     describe: 'Show the table in the console',
   })
+  .check((args, options) => {
+    if (args.b < 0) {
+      throw new Error('The base must be positive');
+    }
+
+    return true;
+  })
   .parseSync();
