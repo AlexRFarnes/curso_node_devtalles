@@ -20,6 +20,18 @@ export const yargsPlugin = yargs(hideBin(process.argv))
     default: false,
     describe: 'Show the table in the console',
   })
+  .option('n', {
+    alias: 'name',
+    type: 'string',
+    default: 'table',
+    describe: 'File name',
+  })
+  .option('d', {
+    alias: 'destination',
+    type: 'string',
+    default: 'outputs',
+    describe: 'File destination',
+  })
   .check((args, options) => {
     if (args.b < 0) {
       throw new Error('The base must be positive');

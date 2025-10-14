@@ -7,7 +7,7 @@ export interface SaveFileUseCase {
 export interface Options {
   fileContent: string;
   fileName?: string;
-  destination?: string;
+  fileDestination?: string;
 }
 
 export class SaveFile implements SaveFileUseCase {
@@ -15,10 +15,10 @@ export class SaveFile implements SaveFileUseCase {
    * repository: StorageRepository
    */() {}
 
-  execute({ fileContent, fileName = 'table', destination = 'outputs' }: Options): boolean {
+  execute({ fileContent, fileName = 'table', fileDestination = 'outputs' }: Options): boolean {
     try {
-      fs.mkdirSync(destination, { recursive: true });
-      fs.writeFileSync(`${destination}/${fileName}.txt`, fileContent, 'utf-8');
+      fs.mkdirSync(fileDestination, { recursive: true });
+      fs.writeFileSync(`${fileDestination}/${fileName}.txt`, fileContent, 'utf-8');
       return true;
     } catch (error) {
       console.error(error);

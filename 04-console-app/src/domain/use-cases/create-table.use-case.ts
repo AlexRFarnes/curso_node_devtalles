@@ -14,6 +14,10 @@ export class CreateTable implements CreateTableUseCase {
 
   execute({ base, limit = 10 }: CreateTableOptions) {
     let output: string = '';
+    output += `===================================
+        Tabla del ${base}
+===================================\n
+`;
     for (let i = 1; i <= limit; i++) {
       output += `${base} x  ${i} =  ${base * i}\n`;
     }
