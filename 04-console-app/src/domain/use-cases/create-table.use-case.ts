@@ -19,7 +19,7 @@ export class CreateTable implements CreateTableUseCase {
 ===================================\n
 `;
     for (let i = 1; i <= limit; i++) {
-      output += `${base} x  ${i} =  ${base * i}\n`;
+      output += `${base} x ${i} = ${base * i}\n`;
     }
     return output;
   }
