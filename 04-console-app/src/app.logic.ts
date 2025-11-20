@@ -1,4 +1,3 @@
-import fs from 'fs';
 import { yargsPlugin as args } from './config/plugins/yargs.plugin.js';
 
 const { b: base, l: limit, s: displayTable } = args;
