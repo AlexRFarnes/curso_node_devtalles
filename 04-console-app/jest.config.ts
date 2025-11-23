@@ -104,10 +104,36 @@ const config: Config = {
   // notifyMode: "failure-change",
 
   // A preset that is used as a base for Jest's configuration
-  preset: 'ts-jest',
+  preset: 'ts-jest/presets/default-esm',
 
   // Run tests from one or more projects
   // projects: undefined,
+
+  // Extensions to treat as ESM
+  extensionsToTreatAsEsm: ['.ts'],
+
+  // Module name mapper for ESM
+  moduleNameMapper: {
+    '^(\\.{1,2}/.*)\\.js$': '$1',
+  },
+
+  // Transform configuration for ts-jest ESM
+  transform: {
+    '^.+\\.tsx?$': [
+      'ts-jest',
+      {
+        useESM: true,
+        diagnostics: {
+          ignoreCodes: [151002],
+        },
+      },
+    ],
+  },
+
+  // Transform ignore patterns - allow transforming yargs and its dependencies
+  transformIgnorePatterns: [
+    'node_modules/(?!(yargs|yargs-parser|string-width|strip-ansi|ansi-regex|is-fullwidth-code-point|emoji-regex|wrap-ansi|get-caller-file|require-directory|set-blocking|which|os-locale|y18n|cliui|decamelize)/)',
+  ],
 
   // Use this configuration option to add custom reporters to Jest
   // reporters: undefined,

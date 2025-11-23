@@ -1,8 +1,8 @@
 export interface CreateTableUseCase {
-  execute: (options: CreateTableOptions) => string;
+  execute: (options: Options) => string;
 }
 
-export interface CreateTableOptions {
+export interface Options {
   base: number;
   limit?: number;
 }
@@ -12,14 +12,15 @@ export class CreateTable implements CreateTableUseCase {
    * DI - Dependency Injection
    */() {}
 
-  execute({ base, limit = 10 }: CreateTableOptions) {
-    let output: string = '';
+  execute({ base, limit = 10 }: Options) {
+    let output = '';
     output += `===================================
         Tabla del ${base}
 ===================================\n
 `;
     for (let i = 1; i <= limit; i++) {
-      output += `${base} x ${i} = ${base * i}\n`;
+      output += `${base} x ${i} = ${base * i}`;
+      if (i < limit) output += '\n';
     }
     return output;
   }

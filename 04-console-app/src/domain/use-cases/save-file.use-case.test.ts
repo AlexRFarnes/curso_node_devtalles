@@ -1,5 +1,6 @@
 import { SaveFile } from './save-file.use-case';
 import fs from 'fs';
+import { jest } from '@jest/globals';
 
 describe('SaveFileUseCase', () => {
   const customOptions = {
@@ -21,10 +22,15 @@ describe('SaveFileUseCase', () => {
   });
 
   test('should save file with default values', () => {
-    const saveFile = new SaveFile();
     const filePath = 'outputs/table.txt';
 
-    const result = saveFile.execute({ fileContent: 'Hello, world!' });
+    const options = {
+      fileContent: 'Hello, world!',
+    };
+
+    const saveFile = new SaveFile();
+
+    const result = saveFile.execute(options);
     const fileExists = fs.existsSync(filePath);
     const fileContent = fs.readFileSync(filePath, 'utf-8');
 
@@ -42,6 +48,32 @@ describe('SaveFileUseCase', () => {
 
     expect(result).toBe(true);
     expect(fileExists).toBe(true);
-    expect(fileContent).toBe('custom content');
+    expect(fileContent).toBe(customOptions.fileContent);
+  });
+
+  test('should return false if the directory cannot be created', () => {
+    const saveFile = new SaveFile();
+
+    const mkdirSpy = jest.spyOn(fs, 'mkdirSync').mockImplementation(() => {
+      throw new Error('Failed to create directory');
+    });
+
+    const result = saveFile.execute(customOptions);
+    expect(result).toBe(false);
+
+    mkdirSpy.mockRestore();
+  });
+
+  test('should return false if the file cannot be saved', () => {
+    const saveFile = new SaveFile();
+
+    const writeFileSpy = jest.spyOn(fs, 'writeFileSync').mockImplementation(() => {
+      throw new Error('Failed to create file');
+    });
+
+    const result = saveFile.execute(customOptions);
+    expect(result).toBe(false);
+
+    writeFileSpy.mockRestore();
   });
 });
