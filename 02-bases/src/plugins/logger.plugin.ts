@@ -2,7 +2,7 @@ import winston, { format } from "winston";
 
 const { combine, timestamp, json } = format;
 
-export const logger = winston.createLogger({
+const logger = winston.createLogger({
   level: "info",
   format: combine(timestamp(), json()),
   // defaultMeta: { service: 'user-service' },
@@ -19,7 +19,7 @@ export const logger = winston.createLogger({
 logger.add(
   new winston.transports.Console({
     format: winston.format.simple(),
-  })
+  }),
 );
 
 export const buildLogger = (service: string) => {
