@@ -14,12 +14,12 @@ describe("js-foundation/02-destructuring.ts", () => {
     expect(characters).toContain("Batman");
   });
 
-  it("should test first element is Flash", () => {
+  it("should have a first element of Flash", () => {
     //    Assert
     expect(characters[0]).toBe("Flash");
   });
 
-  it("should test last element is Batman", () => {
+  it("should have a last element of Batman", () => {
     //    Assert
     expect(characters[characters.length - 1]).toBe("Batman");
   });
